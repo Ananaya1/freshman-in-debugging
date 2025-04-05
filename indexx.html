@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>USF Residence Lookup</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 2rem; background: #f5f5f5; }
+    input, button { padding: 0.5rem; font-size: 1rem; }
+    #result { margin-top: 1rem; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Find Your USF Residence</h2>
+  <input type="text" id="studentName" placeholder="Enter student name">
+  <button onclick="lookupResidence()">Search</button>
+  <div id="result"></div>
+
+  <script>
+    const studentHousing = {
+      "Alice Johnson": "Toler Hall", "Brandon Lee": "Hayes-Healy", "Carmen Patel": "Fromm Hall",
+      "David Kim": "Loyola Village", "Eva Martinez": "Lone Mountain", "Fatima Noor": "Pedro Arrupe",
+      "George Liu": "Gillson Hall", "Hannah Smith": "Welch Hall", "Ishaan Verma": "Toler Hall",
+      "Julia Chen": "Hayes-Healy", "Kevin O'Connor": "Fromm Hall", "Lana Nguyen": "Loyola Village",
+      "Mohamed Ali": "Lone Mountain", "Nina Gonzales": "Pedro Arrupe", "Oscar Torres": "Gillson Hall",
+      "Priya Sharma": "Welch Hall", "Quincy Davis": "Toler Hall", "Rina Kaur": "Hayes-Healy",
+      "Samuel Wright": "Fromm Hall", "Tina Park": "Loyola Village", "Umar Siddiqui": "Lone Mountain",
+      "Victoria Blake": "Pedro Arrupe", "William Zhang": "Gillson Hall", "Xena Garcia": "Welch Hall",
+      "Yusuf Omar": "Toler Hall", "Zara Thompson": "Hayes-Healy", "Aidan Cole": "Fromm Hall",
+      "Bella Rivera": "Loyola Village", "Chris Morales": "Lone Mountain", "Daisy Ahmed": "Pedro Arrupe",
+      "Ethan Brooks": "Gillson Hall", "Farah Khan": "Welch Hall", "Gabriel Flores": "Toler Hall",
+      "Hazel Brown": "Hayes-Healy", "Ian Thomas": "Fromm Hall", "Jasmine Wu": "Loyola Village",
+      "Karan Desai": "Lone Mountain", "Lila Hart": "Pedro Arrupe", "Marcus Green": "Gillson Hall",
+      "Natalie Reyes": "Welch Hall", "Oliver Stone": "Toler Hall", "Penelope Cruz": "Hayes-Healy",
+      "Raymond Scott": "Fromm Hall", "Sofia Navarro": "Loyola Village", "Tyler Reed": "Lone Mountain",
+      "Uma Bhandari": "Pedro Arrupe", "Vikram Mehta": "Gillson Hall", "Wendy Lin": "Welch Hall",
+      "Xavier Hall": "Toler Hall", "Yara Malik": "Hayes-Healy"
+    };
+
+    function lookupResidence() {
+      const name = document.getElementById('studentName').value.trim();
+      const result = studentHousing[name];
+      const display = document.getElementById('result');
+      if (result) {
+        display.innerText = `${name} lives in ${result}.`;
+      } else {
+        display.innerText = "Student not found.";
+      }
+    }
+  </script>
+</body>
+</html>
